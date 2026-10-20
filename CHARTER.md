@@ -1,3 +1,4 @@
-## PROJECT CHARTER 
+# PROJECT CHARTER 
 
 
+## Goals 
