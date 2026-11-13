@@ -1,22 +1,43 @@
 # Walmart Hurricane Analytics
 
 **DS2002 Data Science Systems, University of Virginia | Midterm Group Project (Fall 2026)**
-**Team data-cane:** Megha, Hershi, Angelia
 
-We act as Walmart data science consultants ahead of a hurricane approaching Florida. Using messy, synthetic point-of-sale data for September 2024 (Hurricane Helene), we clean and consolidate the data, enrich it with real weather data from an API, and answer five questions about demand surges, SKU fragmentation, weather effects, store-level patterns, and a suspicious board games spike.
+## Team
+
+| Name | GitHub | Role / main contributions |
+|------|--------|---------------------------|
+| Megha | [megha-krish](https://github.com/megha-krish) | Cleaned the data, made the decision log, and worked on Q1 (demand surge) |
+| Hershi | [hershiaytoda](https://github.com/hershiaytoda) | Worked with the weather API, joined the data, and did Q3 (weather correlation) |
+| Angelia | [angeliaanne](https://github.com/angeliaanne) | Worked on Q2 (SKU consolidation), Q4 (store locations), and Q5 (board games) |
+
+For this project, we cleaned Walmart sales data from Florida stores in September 2024 and combined it with weather data from the Open-Meteo API. We wanted to see how people's shopping changed before Hurricane Helene made landfall on September 26. Overall, stores sold 146% more units in the week before the storm, and people seemed to start buying more around 2 days before the worst weather. Breakfast foods like Pop-Tarts and emergency supplies had some of the biggest increases. We also looked into the reported 250% jump in board games, but it seemed to be more from overall shopping increasing and messy category labels rather than people specifically buying more games.
+
+
+## Data
+
+| File | Source | Notes |
+|------|--------|-------|
+| `walmart_transactions.csv` | Course repo | Around 25,500 sales rows. There were duplicates, different timestamp formats, `$` signs in prices, negative quantities, and inconsistent store IDs and SKUs |
+| `store_locations.csv` | Course repo | 14 rows, but only 12 actual stores because 2 were repeated. Tallahassee was missing latitude and longitude |
+| `product_catalog.csv` | Course repo | Product/SKU reference file. Some products had multiple SKUs and some package sizes were wrong |
+| `distribution_centers.csv` | Course repo | 5 distribution centers. Some values were messy, like `~750`, and some costs were missing |
+| `inventory_and_sales.db` | Course repo | SQLite database with `daily_sales_summary` and `inventory_levels`. Some dates had different formats and `units_on_order` was missing in places |
+
+We also used the **Open-Meteo Historical Weather API**: `https://archive-api.open-meteo.com/v1/archive`.
+
+We pulled daily rain, maximum wind speed, and average sea-level pressure. We set `timezone=America/New_York` so the weather dates would match the sales dates in Eastern time.
 
 ---
 
 ## Overview of findings
 
-> [TODO: finalize once every question is complete in the final notebook.]
+## Key findings
 
-- **Q1, Demand surge:** [TODO: confirm numbers and windows against the final notebook.] In our working draft, Florida stores averaged about 1,599 transactions/day from Sep 21-25, roughly 2.8x the 576/day baseline (Sep 1-15), peaking at about 3.5x on Sep 25.
-- **Q2, SKU consolidation:** 45 SKU codes and 63 product name spellings map to 20 real products, with unit totals unchanged. Pop-Tarts Strawberry was split across 4 SKUs. Its true volume is about 73 units/day in the baseline and 377/day in the 7 days before landfall (+414%), a size no single SKU shows.
-- **Q3, Weather correlation:** [TODO: confirm.] In our working draft (Orlando store, Sep 2024, n = 30 days), daily revenue correlated weakly negatively with precipitation (r = -0.27) and moderately positively with max wind speed (r = 0.43). These are correlations from one store over one month.
-- **Q4, Store geography:** Stores closer to the storm path did not surge earlier or harder. All 12 stores reached 2x baseline around Sep 21 and peaked Sep 24-25, with surge multiples between 2.2x and 2.7x.
-- **Q5, Board games:** Mostly a data artifact, not a demand signal. A fair window gives +145%, not +250%, and board games rose in line with overall traffic. **Recommendation: do not stock extra board games**; prioritize true storm items like Pop-Tarts and water.
-
+- **Q1 Demand surge:** In the week before landfall (Sep 19–25), sales went up **146%** compared to our Sep 1–15 baseline. Breakfast had the biggest increase (+414%), followed by emergency supplies (+184%), electronics (+150%), alcohol (+126%), and entertainment (+125%).
+- **Q2 Pop-Tarts:** We found 45 SKU codes and 63 different product name spellings, even though there were only 20 actual products. Pop-Tarts alone was split into 4 SKUs. Once we combined them, sales went from around **73 to 377 units a day (+414%)**. That's about 4 times what we would've seen looking at just one SKU.
+- **Q3 Weather:** For the Orlando store (FL-239), sales had some correlation with wind (r = 0.46), pressure (r = -0.32), and rain (r = -0.26). The strongest relationship was between sales and wind **2 days later** (r = 0.77), which suggests people were shopping ahead of the storm. This was only based on 30 days and one store though.
+- **Q4 Stores:** All the stores had sales spikes around the same time, starting around Sep 21 and peaking Sep 24–25, even if they weren't as close to landfall. Miami (2.7x) and Orlando (2.2x) stood out the most.
+- **Q5 Board games:** Entertainment sales went up around 145%, which was almost the same as the 146% increase across all products. Monopoly also stayed at about 4% of total units sold, so it didn't really seem like board games had their own separate surge.
 ---
 
 ## Repository structure
@@ -39,54 +60,28 @@ walmart-hurricane-project/
     └── inventory_and_sales.db         <- SQLite: daily_sales_summary + inventory_levels
 
 ```
-
 ---
 
 ## How to run
 
-1. Open `walmart_hurricane_final.ipynb` in Google Colab (badge at the top of the notebook) or in Jupyter.
-2. Make sure the `data/` folder is next to the notebook. In Colab, the notebook clones this repo to get it.
-3. Choose **Restart and Run All**. The weather section calls a live API, so it needs an internet connection.
+1. Open `notebooks/walmart_hurricane_final.ipynb` in Google Colab. You can use the "Open in Colab" badge, or go to File → Open notebook → GitHub and paste the repo link.
+2. Run the first cell, which clones the repo so the notebook can access the `data/` folder.
+3. Go to Runtime → **Restart and run all** to run the whole notebook. You'll need internet for the weather API part.
+4. You don't need an API key since Open-Meteo is free. We used `pandas`, `matplotlib`, `sqlite3`, and `requests`, which are already available in Colab.
 
-**Requirements:** Python 3, `pandas`, `matplotlib`, `seaborn`, `requests`, and `sqlite3` (included with Python).
-
----
-
-## Data sources
-
-**Supplied (synthetic) data:** the five files in `data/` listed above. Each contains intentional quality issues (duplicates, mixed date formats, SKU variants, inconsistent store IDs, and others), which the notebook's cleaning pipeline fixes.
-
-**Weather data:** [Open-Meteo Historical Weather API](https://open-meteo.com/), free with no API key.
-- Base URL: `https://archive-api.open-meteo.com/v1/archive`
-- Daily precipitation and max wind speed, requested in the `America/New_York` timezone to align with the sales data. [TODO: Hershi to confirm the final variables, location(s), and timezone handling match the final notebook.]
+You can also run it on your own computer by cloning the repo, opening the notebook in Jupyter, and running all the cells. The notebook checks for the files in `data/` or `../data/`.
 
 ---
-
 ## Methodology summary
 
 1. **Load:** all files read as text first (`dtype=str`) so types are fixed deliberately during cleaning.
 2. **Clean:** drop exact duplicates, parse mixed timestamp formats, strip `$` from prices, standardize store IDs, remove negative quantities, map SKUs to canonical products.
 3. **Enrich:** pull daily weather from Open-Meteo and join it to daily sales.
 4. **Analyze:** Q1-Q5 each have code, a chart, and a written finding in the notebook.
-
----
-
-## Team and contributions
-
-| Member | Role |
-|---|---|
-| Megha | Data cleaning, decision log, Q1 |
-| Hershi | Weather API and join, Q3 |
-| Angelia | Q2, Q4, Q5 |
-
-[TODO: add charts and presentation owner(s).] See [CHARTER.md](CHARTER.md) for how we work together.
-
 ---
 
 ## Reflection
 
-Our reflection write-up is in [REFLECTION.md](REFLECTION.md).
+Our reflection write-up is in [REFLECTION.md]. 
 
 ---
-
-*Data is synthetic and the project is inspired by a real Walmart case study.*
