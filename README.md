@@ -1,17 +1,17 @@
-# Walmart Hurricane Analytics
+# walmart-hurricane-project
+ds 2002 midterm project
 
-**DS2002 Data Science Systems, University of Virginia | Midterm Group Project (Fall 2026)**
+## team
 
-## Team
-
-| Name | GitHub | Role / main contributions |
+| Name | gitHub | Role / main contributions |
 |------|--------|---------------------------|
 | Megha | [megha-krish](https://github.com/megha-krish) | Cleaned the data, made the decision log, and worked on Q1 (demand surge) |
 | Hershi | [hershiaytoda](https://github.com/hershiaytoda) | Worked with the weather API, joined the data, and did Q3 (weather correlation) |
 | Angelia | [angeliaanne](https://github.com/angeliaanne) | Worked on Q2 (SKU consolidation), Q4 (store locations), and Q5 (board games) |
 
-For this project, we cleaned Walmart sales data from Florida stores in September 2024 and combined it with weather data from the Open-Meteo API. We wanted to see how people's shopping changed before Hurricane Helene made landfall on September 26. Overall, stores sold 146% more units in the week before the storm, and people seemed to start buying more around 2 days before the worst weather. Breakfast foods like Pop-Tarts and emergency supplies had some of the biggest increases. We also looked into the reported 250% jump in board games, but it seemed to be more from overall shopping increasing and messy category labels rather than people specifically buying more games.
-
+## summary
+Our team was able to clean up Walmart sales information for stores located in Florida during the month of September 2024. We then merged that data set with weather information we pulled via the Open-Meteo API. Our goal was to determine if people were changing their purchasing habits prior to when Hurricane Helene hit on September 26. In general, stores saw an increase of approximately 146% in total number of units sold the week prior to the storm. It appears that people began making more purchases about two days before the worst weather arrived. Breakfast food items such as Pop-Tarts and emergency supply items experienced some of the highest increases. We also investigated the reported 250% increase in board game sales; however, it appeared that the increased volume of sales was due to an overall increase in purchasing activity and poor categorization of products rather than people purchasing more board games.
+ 
 
 ## Data
 
@@ -27,41 +27,6 @@ We also used the **Open-Meteo Historical Weather API**: `https://archive-api.ope
 
 We pulled daily rain, maximum wind speed, and average sea-level pressure. We set `timezone=America/New_York` so the weather dates would match the sales dates in Eastern time.
 
----
-
-## Overview of findings
-
-## Key findings
-
-- **Q1 Demand surge:** In the week before landfall (Sep 19–25), sales went up **146%** compared to our Sep 1–15 baseline. Breakfast had the biggest increase (+414%), followed by emergency supplies (+184%), electronics (+150%), alcohol (+126%), and entertainment (+125%).
-- **Q2 Pop-Tarts:** We found 45 SKU codes and 63 different product name spellings, even though there were only 20 actual products. Pop-Tarts alone was split into 4 SKUs. Once we combined them, sales went from around **73 to 377 units a day (+414%)**. That's about 4 times what we would've seen looking at just one SKU.
-- **Q3 Weather:** For the Orlando store (FL-239), sales had some correlation with wind (r = 0.46), pressure (r = -0.32), and rain (r = -0.26). The strongest relationship was between sales and wind **2 days later** (r = 0.77), which suggests people were shopping ahead of the storm. This was only based on 30 days and one store though.
-- **Q4 Stores:** All the stores had sales spikes around the same time, starting around Sep 21 and peaking Sep 24–25, even if they weren't as close to landfall. Miami (2.7x) and Orlando (2.2x) stood out the most.
-- **Q5 Board games:** Entertainment sales went up around 145%, which was almost the same as the 146% increase across all products. Monopoly also stayed at about 4% of total units sold, so it didn't really seem like board games had their own separate surge.
----
-
-## Repository structure
-
-```
-walmart-hurricane-project/
-├── README.md                          <- this file
-├── CHARTER.md                         <- team charter
-├── REFLECTION.md                      <- reflection write-up
-├── notebook/
-│   ├── walmart_hurricane_final.ipynb  <- final notebook (the deliverable)
-│   └── SCRATCH/
-│       ├── _2026-10-23 — Midterm Checkpoint — Lab.ipynb
-│       └── _2026_10_30_—_Midterm_Progress_—_Lab.ipynb
-└── data/
-    ├── walmart_transactions.csv       <- ~25,000 messy POS records
-    ├── store_locations.csv            <- Florida store metadata
-    ├── product_catalog.csv             <- product/SKU reference
-    ├── distribution_centers.csv       <- distribution center info
-    └── inventory_and_sales.db         <- SQLite: daily_sales_summary + inventory_levels
-
-```
----
-
 ## How to run
 
 1. Open `notebooks/walmart_hurricane_final.ipynb` in Google Colab. You can use the "Open in Colab" badge, or go to File → Open notebook → GitHub and paste the repo link.
@@ -71,17 +36,49 @@ walmart-hurricane-project/
 
 You can also run it on your own computer by cloning the repo, opening the notebook in Jupyter, and running all the cells. The notebook checks for the files in `data/` or `../data/`.
 
----
-## Methodology summary
+## Key findings
 
-1. **Load:** all files read as text first (`dtype=str`) so types are fixed deliberately during cleaning.
-2. **Clean:** drop exact duplicates, parse mixed timestamp formats, strip `$` from prices, standardize store IDs, remove negative quantities, map SKUs to canonical products.
-3. **Enrich:** pull daily weather from Open-Meteo and join it to daily sales.
-4. **Analyze:** Q1-Q5 each have code, a chart, and a written finding in the notebook.
----
+- **Q1 Demand surge:** The sales in the week prior to Hurricane Irma landfall (Sep 19–25) increased by 146% over the Sep 1–15 baseline. Breakfast was the greatest increase in terms of dollars (+414%) followed by Emergency Supplies (+184%), Electronics (+150%), Alcohol (+126%) and Entertainment (+125%).
+- **Q2 Pop-Tarts:** There were 45 different SKU codes for 63 different product name spellings for the 20 actual products. Pop-Tarts, for example, had 4 different SKUs. After combining the different SKUs for the Pop-Tarts, sales increased from approximately 73 units per day to 377 units per day, an increase of 414% over the average for the 20 products.
+- **Q3 Weather:** Sales for the Orlando store (FL-239) had a correlation of r = 0.46 with wind, r = -0.32 with pressure, and r = -0.26 with rain. There was a very strong relationship between sales and wind 2 days later (r = 0.77). This is only based on 30 days of data for one store.
+- **Q4 Stores:** All stores saw sales spikes around the same time period with the largest sales increases occurring between Sep 21 and Sep 24–25. The stores closest to the landfall were Miami (2.7x) and Orlando (2.2x).
+- **Q5 Board games:** The increase in entertainment sales was nearly identical to the overall increase in sales of all products of 146%. The sales of Monopoly also remained at roughly 4% of total units sold, so there did not appear to be a separate increase in sales of board games.
+
+## Recommendation
+
+Based on what we found, I think Walmart should start sending extra stock to **all Florida stores** about a week before a hurricane is expected to make landfall, instead of only focusing on stores directly in its path. Extra space on trucks should go toward products that increase more than normal shopping does, like Pop-Tarts, other breakfast foods, water, and emergency supplies.
+
+I wouldn't recommend sending extra board games beyond what stores would normally need for the increase in customers. We also think Walmart should combine duplicate SKUs, like the 4 Pop-Tarts codes and 3 Monopoly codes, before analyzing demand for the next storm. Otherwise, it can look like stores need less of a product than they actually do.
 
 ## Reflection
 
-Our reflection write-up is in [REFLECTION.md]. 
+### 1. Data Quality Impact 
+_TODO_
 
----
+### 2. ETL Trade-offs (Megha)
+
+_TODO_
+
+### 3. Pipeline Trust (Hershi)
+
+_TODO_
+
+### 4. Business vs. Data (Angelia)
+
+For the board games question, the data wasn't completely clear. The +250% increase only showed up when looking at the peak day, and the inventory data had missing values and some incorrect SKUs. So we couldn't really say for sure what happened.
+
+I was surprised to see that Monopoly sales were around 4% of total sales before and after the storm (3.9% vs. 4.0%). It seems that the increase in sales was due to more customers being in the store, rather than customers specifically wanting to buy board games.
+
+If we make the wrong decision here and Walmart does not stock up on games, then shelves may be empty but games do not spoil and are not as important as other products such as emergency supplies. On the other hand, if Walmart stocks up on too many games then they are taking up space in trucks and on shelves that could be used for other products such as water, Pop-Tarts, etc. that people need more. Therefore, I would not stock up on extra board games for this hurricane, but only increase sales as normal for other products. If we had more time then we could look at multiple hurricanes and see if there is an increase in sales for board games after landfall as well, because on September 26 there was a small increase in sales that I was not able to explain with the data that we have.
+
+### 5. Team Collaboration
+We split up the work based on our team charter. Megha worked on cleaning the data, the decision log, and Q1. Hershi did the weather API, joining the data, and Q3. I worked on Q2, Q4, and Q5.
+**Angelia:** 
+
+If we had another week, I think I would've started Q4 and Q5 earlier since they weren't started yet at our first checkpoint. I also think we should've agreed on one cleaning method earlier because some of our numbers didn't match at first. For example, my first Q2 results showed 49,643 units, but after removing duplicates and rows with missing timestamps, it was actually 47,897.
+
+I think my biggest contribution was figuring out the different SKU codes and category names and combining them so the data was more accurate. I also used SQL to check the board game sales against the database instead of only relying on the CSV.
+
+**Megha:** _TODO_
+
+**Hershi:** _TODO_
