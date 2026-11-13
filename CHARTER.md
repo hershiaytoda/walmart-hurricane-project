@@ -15,7 +15,7 @@ What each person wants out of this project (e.g., API practice, a strong present
 
 - **Megha:** I want to get more practice with data cleaning, since this dataset has so many different problems (duplicates, mixed date formats, inconsistent IDs and categories) and I want to get better at deciding how to fix them and documenting why. I also want to get better at plotting and communicating results clearly, using line plots and other chart types and making sure they are formatted correctly.
 - **Hershi:** I want to get more practice with using an API, particularly with the weather API. I want learn about this so I can improve drawing from other data sources to make my analysis and conclusions more robust.   
-- **Angelia:** [TODO]
+- **Angelia:** I want to get more practice using SQL with pandas and analyzing the results of a query to determine if they are real or just a data problem (e.g. the board games question). I would also like to practice turning analysis into recommendations.
 
 ### Limits and concerns
 Classes, extracurriculars, work commitments, and other time commitments. To manage this, we have blocked off time to work outside of class when needed.
@@ -97,5 +97,5 @@ By signing below, each team member acknowledges and agrees to the expectations, 
 |---|---|
 | Megha | M.S. |
 | Hershi | H.A |
-| Angelia | Agreed |
+| Angelia | A.I. |
 
