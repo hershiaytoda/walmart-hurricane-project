@@ -113,4 +113,9 @@ If we had another week, I would have put the cleaning in one shared function at 
 I think my most valuable skill was careful cleaning and writing down every decision, with how many rows it affected, so that everyone else could trust the data and explain it. One thing that showed it worked was that my Q1 Breakfast numbers (73 to 377 units/day) matched Angelia's Pop-Tarts numbers from Q2, so our cleaning agreed.
 
 
-**Hershi:** _TODO_
+**Hershi:** 
+
+
+I worked on Question 3, the weather correlation analysis, and the Open-Meteo API integration. This included the daily_weather() function with retries, the daily sales-to-weather join with row-count checks, the category-level correlation heatmap, and the lag analysis. I also standardized the 18 category labels down to 10 and rebuilt the Orlando sales subset so Q3 used the same cleaning rules as Q1.
+
+My biggest contribution was the lag analysis. It showed that Orlando’s sales peaked on Sep 24 and wind peaked on Sep 26. Also I saw that the correlation with wind rises from 0.46 on the same day to 0.77 when sales are compared with wind two days later. This changed the Q3 answer from a weak same-day correlation to a clear timing pattern. Overall, shoppers bought before the storm arrived, not during it.
