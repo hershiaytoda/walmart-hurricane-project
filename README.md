@@ -26,18 +26,19 @@ walmart-hurricane-project/
 ├── README.md                          <- this file
 ├── CHARTER.md                         <- team charter
 ├── REFLECTION.md                      <- reflection write-up
-├── DS2002_Midterm_Project_Brief.md    <- assignment brief
-├── Walmart Case.pdf                   <- case study
-├── walmart_hurricane_final.ipynb      <- final notebook (the deliverable)
+├── notebook/
+│   ├── walmart_hurricane_final.ipynb  <- final notebook (the deliverable)
+│   └── SCRATCH/
+│       ├── _2026-10-23 — Midterm Checkpoint — Lab.ipynb
+│       └── _2026_10_30_—_Midterm_Progress_—_Lab.ipynb
 └── data/
     ├── walmart_transactions.csv       <- ~25,000 messy POS records
     ├── store_locations.csv            <- Florida store metadata
-    ├── product_catalog.csv            <- product/SKU reference
+    ├── product_catalog.csv             <- product/SKU reference
     ├── distribution_centers.csv       <- distribution center info
     └── inventory_and_sales.db         <- SQLite: daily_sales_summary + inventory_levels
-```
 
-[TODO: adjust to match the repo exactly, e.g. if the notebook lives in `notebooks/`.]
+```
 
 ---
 
