@@ -9,7 +9,7 @@ DS 2002 at UVA midterm project
 | Hershi | [hershiaytoda](https://github.com/hershiaytoda) | Worked with the weather API, joined the data, and did Q3 (weather correlation) |
 | Angelia | [angeliaanne](https://github.com/angeliaanne) | Worked on Q2 (SKU consolidation), Q4 (store locations), and Q5 (board games) |
 
-## summary
+## Summary
 Our team was able to clean up Walmart sales information for stores located in Florida during the month of September 2024. We then merged that data set with weather information we pulled via the Open-Meteo API. Our goal was to determine if people were changing their purchasing habits prior to when Hurricane Helene hit on September 26. In general, stores saw an increase of approximately 146% in total number of units sold the week prior to the storm. It appears that people began making more purchases about two days before the worst weather arrived. Breakfast food items such as Pop-Tarts and emergency supply items experienced some of the highest increases. We also investigated the reported 250% increase in board game sales; however, it appeared that the increased volume of sales was due to an overall increase in purchasing activity and poor categorization of products rather than people purchasing more board games.
  
 
