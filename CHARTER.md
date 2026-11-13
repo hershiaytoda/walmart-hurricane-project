@@ -59,11 +59,11 @@ Every question gets an owner and a reviewer.
 
 | Question | Owner | Reviewer |
 |---|---|---|
-| Q1 (critical path) | [TODO] | [TODO] |
-| Q2 | Angelia | [TODO] |
-| Q3 (critical path) | Hershi | [TODO] |
-| Q4 | Angelia | [TODO] |
-| Q5 | Angelia | [TODO] |
+| Q1 (critical path) | Megha | Hershi |
+| Q2 | Angelia | Hershi |
+| Q3 (critical path) | Hershi | Angelia |
+| Q4 | Angelia | Megha |
+| Q5 | Angelia | Megha |
 
 Q1 and Q3 are the critical path, so we will get those two moving first.
 
