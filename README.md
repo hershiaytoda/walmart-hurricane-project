@@ -1,5 +1,5 @@
-# walmart-hurricane-project
-ds 2002 midterm project
+# Walmart-Hurricane-Project
+DS 2002 at UVA midterm project
 
 ## Team
 
