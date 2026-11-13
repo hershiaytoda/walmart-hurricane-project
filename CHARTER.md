@@ -13,7 +13,7 @@ A good result for us is a strong presentation with a reasonable, well-supported 
 ### Personal goals
 What each person wants out of this project (e.g., API practice, a strong presentation, or just getting through it).
 
-- **Megha:** [TODO]
+- **Megha:** I want to get more practice with data cleaning, since this dataset has so many different problems (duplicates, mixed date formats, inconsistent IDs and categories) and I want to get better at deciding how to fix them and documenting why. I also want to get better at plotting and communicating results clearly, using line plots and other chart types and making sure they are formatted correctly.
 - **Hershi:** I want to get more practice with using an API, particularly with the weather API. I want learn about this so I can improve drawing from other data sources to make my analysis and conclusions more robust.   
 - **Angelia:** [TODO]
 
@@ -95,7 +95,7 @@ By signing below, each team member acknowledges and agrees to the expectations, 
 
 | Team Member | Agreement |
 |---|---|
-| Megha | Agreed |
+| Megha | M.S. |
 | Hershi | H.A |
 | Angelia | Agreed |
 
