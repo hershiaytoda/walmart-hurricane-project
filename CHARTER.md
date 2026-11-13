@@ -14,14 +14,14 @@ A good result for us is a strong presentation with a reasonable, well-supported 
 What each person wants out of this project (e.g., API practice, a strong presentation, or just getting through it).
 
 - **Megha:** [TODO]
-- **Hershi:** [TODO]
+- **Hershi:** I want to get more practice with using an API, particularly with the weather API. I want learn about this so I can improve drawing from other data sources to make my analysis and conclusions more robust.   
 - **Angelia:** [TODO]
 
 ### Limits and concerns
 Classes, extracurriculars, work commitments, and other time commitments. To manage this, we have blocked off time to work outside of class when needed.
 
 ### What to avoid
-[TODO: What would make this a bad experience for us, and what will we do about it? Example: one person ends up doing the last-minute work, so we will check in on progress mid-week.]
+We will try to avoid last-minute work, cramming, and poor communication. This would make the process more difficult since we will not be together at all times. We should aim for a balanced work and communication style in which we make enough progress at each checkpoint and interact with each other enough to avoid doubts and confusion. 
 
 ---
 
@@ -91,9 +91,13 @@ Outside of class, we meet **Mondays and Wednesdays, 11:00-11:45 AM, right after 
 
 ## Team agreement
 
-By committing this file, each member agrees to the above.
+## Team Agreement
 
-- Megha: [TODO: date]
-- Hershi: [TODO: date]
-- Angelia: [TODO: date]
+By signing below, each team member acknowledges and agrees to the expectations, responsibilities, and guidelines outlined in this team charter.
+
+| Team Member | Agreement |
+|---|---|
+| Megha | Agreed |
+| Hershi | Hershi Aytoda |
+| Angelia | Agreed |
 
