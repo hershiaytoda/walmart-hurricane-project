@@ -24,4 +24,3 @@ For Question 5 (board games), your team had to make a recommendation with imperf
 5. Team Collaboration
 
 How did your team divide the work? What would you do differently if you had another week? What was the most valuable skill each team member contributed?
-
