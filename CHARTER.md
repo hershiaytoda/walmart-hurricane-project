@@ -89,8 +89,6 @@ Outside of class, we meet **Mondays and Wednesdays, 11:00-11:45 AM, right after 
 
 ---
 
-## Team agreement
-
 ## Team Agreement
 
 By signing below, each team member acknowledges and agrees to the expectations, responsibilities, and guidelines outlined in this team charter.
@@ -98,6 +96,6 @@ By signing below, each team member acknowledges and agrees to the expectations, 
 | Team Member | Agreement |
 |---|---|
 | Megha | Agreed |
-| Hershi | Hershi Aytoda |
+| Hershi | H.A |
 | Angelia | Agreed |
 
