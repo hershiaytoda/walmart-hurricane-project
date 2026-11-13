@@ -32,7 +32,7 @@ We will try to avoid last-minute work, cramming, and poor communication. This wo
 | Cleaning + decision log | Megha | Hershi | Cleaning functions, the SKU mapping table, and the decision log | One function turns raw files into clean tables. The log lists every decision and the rows touched. | Cleaning, 25% |
 | Weather API + join | Hershi | Angelia | API call with retries, parsing, and timezone alignment; a checked join to sales | One function returns daily weather. The join passes a row-count check. URL is cited. | Base Weather, 15% |
 | Analysis Q1-Q5 | Angelia (Q2, Q4, Q5); [Megha + Hershi] (Q1, Q3) | [Switch Questions] | The five answers: code, a number, and a written finding each. Q5 uses SQLite. | Every question has code, a number, and a paragraph. | Questions, 30% |
-| Charts + presentation | Shared: [TODO] | [TODO] | At least six plots with message titles, the six-minute talk, and the README | Six labeled plots. The talk has been rehearsed once. | Visuals, 15% |
+| Charts + presentation | Shared | Everyone | At least six plots with message titles, the six-minute talk, and the README | Six labeled plots. The talk has been rehearsed once. | Visuals, 15% |
 
 The owner is who we ask. The backup steps in when the owner can't.
 
