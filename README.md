@@ -84,7 +84,7 @@ One decision I made was how to handle sales rows with missing timestamps. In the
 
 ### 3. Pipeline Trust (Megha)
 
-_TODO_
+I agree with the CDO. We didn't use any complicated model in this project as everything was averages, percent changes, and correlations, so our answers depended on whether the cleaned data was right. Our code ran fine on the raw data with no errors, but the numbers it gave would have been wrong. The raw data had 60 spellings of 12 store IDs, 37 spellings of 10 categories, prices stored as text with a $, mixed date formats, and 30 duplicate rows. If we hadn't merged the categories, Q1 would have split each real category into pieces and made every surge look smaller. The most fragile part was the timestamps. About 884 rows had no timestamp and had to be dropped, because a row with no date can't go in the baseline or surge window. We never checked whether those rows were spread evenly across days, and we can't check now because the date is gone. If a lot of them were from the days right before landfall, then all of our surge numbers are too low. We also used hand-made dictionaries for the category and SKU fixes, so a new spelling could slip through without an error. Our unit totals didn't match at first because the cleaning steps were copied into more than one place. If we had more time, I would put the cleaning in one shared function and add checks that stop the code if there is an unmapped category or SKU, or a date outside September.
 
 ### 4. Business vs. Data (Angelia)
 
@@ -102,6 +102,7 @@ If we had another week, I think I would've started Q4 and Q5 earlier since they 
 
 I think my biggest contribution was figuring out the different SKU codes and category names and combining them so the data was more accurate. I also used SQL to check the board game sales against the database instead of only relying on the CSV.
 
-**Megha:** _TODO_
+**Megha:** 
+
 
 **Hershi:** _TODO_
