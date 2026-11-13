@@ -96,6 +96,8 @@ If we make the wrong decision here and Walmart does not stock up on games, then 
 
 ### 5. Team Collaboration
 We split up the work based on our team charter. Megha worked on cleaning the data, the decision log, and Q1. Hershi did the weather API, joining the data, and Q3. I worked on Q2, Q4, and Q5.
+
+
 **Angelia:** 
 
 If we had another week, I think I would've started Q4 and Q5 earlier since they weren't started yet at our first checkpoint. I also think we should've agreed on one cleaning method earlier because some of our numbers didn't match at first. For example, my first Q2 results showed 49,643 units, but after removing duplicates and rows with missing timestamps, it was actually 47,897.
