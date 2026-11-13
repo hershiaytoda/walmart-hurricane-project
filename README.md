@@ -53,7 +53,9 @@ I wouldn't recommend sending extra board games beyond what stores would normally
 ## Reflection
 
 ### 1. Data Quality Impact 
-_TODO_
+In the course of trying to make sense of the Walmart data, I ran into a few products that had been assigned multiple SKU codes and names. For example, there were 45 SKUs for 20 products, with 63 different spellings of product names. For example, Strawberry Pop-Tarts had 4 SKUs (`PT-12`, `SKU#459812`, `POPTART-STRAW`, and `PT_STRAWBERRY`) and 6 different names. I created a mapping table to link the different names to a single product name and verified that the total number of units for the product was the same before and after the mapping (47,897).
+
+After mapping the products, Pop-Tarts went from being a product that on average sold 20 units a day per SKU to a product that on average sold 73 units a day with peak sales of 377 units in the week before landfall. This is a very different picture than before mapping the products. In fact, Pop-Tarts is one of the top selling products in the stores. If we hadn’t mapped the products, Walmart would have ordered less of the product than stores were actually selling. This also happened with Monopoly which had 3 SKUs and entertainment which had 4 category names.
 
 ### 2. ETL Trade-offs (Megha)
 
