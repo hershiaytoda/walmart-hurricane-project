@@ -104,5 +104,11 @@ I think my biggest contribution was figuring out the different SKU codes and cat
 
 **Megha:** 
 
+I cleaned the data, made the decision log, and did Q1, which made the most sense because the other questions all depended on having clean data first. 
+
+If we had another week, I would have put the cleaning in one shared function at the start and started this earlier, since we ended up with the cleaning steps copied in more than one place and our unit totals didn't match at first. I would also have checked the rows with missing timestamps before dropping them, instead of just assuming they wouldn't change the results. 
+
+I think my most valuable skill was careful cleaning and writing down every decision, with how many rows it affected, so that everyone else could trust the data and explain it. One thing that showed it worked was that my Q1 Breakfast numbers (73 to 377 units/day) matched Angelia's Pop-Tarts numbers from Q2, so our cleaning agreed.
+
 
 **Hershi:** _TODO_
