@@ -1,7 +1,7 @@
 # Walmart-Hurricane-Project
 DS 2002 at UVA midterm project
 
-## Team
+## team
 
 | Name | gitHub | Role / main contributions |
 |------|--------|---------------------------|
@@ -9,11 +9,11 @@ DS 2002 at UVA midterm project
 | Hershi | [hershiaytoda](https://github.com/hershiaytoda) | Worked with the weather API, joined the data, and did Q3 (weather correlation) |
 | Angelia | [angeliaanne](https://github.com/angeliaanne) | Worked on Q2 (SKU consolidation), Q4 (store locations), and Q5 (board games) |
 
-## Summary
+## summary
 Our team was able to clean up Walmart sales information for stores located in Florida during the month of September 2024. We then merged that data set with weather information we pulled via the Open-Meteo API. Our goal was to determine if people were changing their purchasing habits prior to when Hurricane Helene hit on September 26. In general, stores saw an increase of approximately 146% in total number of units sold the week prior to the storm. It appears that people began making more purchases about two days before the worst weather arrived. Breakfast food items such as Pop-Tarts and emergency supply items experienced some of the highest increases. We also investigated the reported 250% increase in board game sales; however, it appeared that the increased volume of sales was due to an overall increase in purchasing activity and poor categorization of products rather than people purchasing more board games.
  
 
-## Repository Structure
+## Repo Structure
 
 ```
 walmart-hurricane-project/
@@ -33,7 +33,7 @@ walmart-hurricane-project/
 
 ```
 
-## Data
+## data
 
 | File | Source | Notes |
 |------|--------|-------|
@@ -72,8 +72,8 @@ I wouldn't recommend sending extra board games beyond what stores would normally
 
 ## Reflection
 
-### 1. Data Quality Impact 
-In the course of trying to make sense of the Walmart data, I ran into a few products that had been assigned multiple SKU codes and names. For example, there were 45 SKUs for 20 products, with 63 different spellings of product names. For example, Strawberry Pop-Tarts had 4 SKUs (`PT-12`, `SKU#459812`, `POPTART-STRAW`, and `PT_STRAWBERRY`) and 6 different names. I created a mapping table to link the different names to a single product name and verified that the total number of units for the product was the same before and after the mapping (47,897).
+### 1. Data Quality Impact (Angelia)
+As i was trying to make sense of the Walmart data, I ran into a few products that had been assigned multiple SKU codes and names. For example, there were 45 SKUs for 20 products, with 63 different spellings of product names. For example, Strawberry Pop-Tarts had 4 SKUs (`PT-12`, `SKU#459812`, `POPTART-STRAW`, and `PT_STRAWBERRY`) and 6 different names. I created a mapping table to link the different names to a single product name and verified that the total number of units for the product was the same before and after the mapping (47,897).
 
 After mapping the products, Pop-Tarts went from being a product that on average sold 20 units a day per SKU to a product that on average sold 73 units a day with peak sales of 377 units in the week before landfall. This is a very different picture than before mapping the products. In fact, Pop-Tarts is one of the top selling products in the stores. If we hadn’t mapped the products, Walmart would have ordered less of the product than stores were actually selling. This also happened with Monopoly which had 3 SKUs and entertainment which had 4 category names.
 
