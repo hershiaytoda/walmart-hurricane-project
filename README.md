@@ -1,7 +1,7 @@
 # Walmart-Hurricane-Project
-DS 2002 at UVA midterm project
+DS 2002 at UVA Midterm Project
 
-## team
+## Team
 
 | Name | gitHub | Role / main contributions |
 |------|--------|---------------------------|
