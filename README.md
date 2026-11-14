@@ -33,7 +33,7 @@ walmart-hurricane-project/
 
 ```
 
-## data
+## Data
 
 | File | Source | Notes |
 |------|--------|-------|
